@@ -1,0 +1,40 @@
+syntax = "proto3";
+package testPackage;
+
+enum TestEnum {
+  enum0 = 0;
+  enum1 = 1;
+  enum2 = 2;
+  enum3 = 3;
+}
+
+message TestGrandchildMessage {
+  double doubleField = 1;
+  uint64 repeatedStringLengthStringField = 2;
+  repeated string repeatedStringField = 3;
+}
+
+message TestChildMessage {
+  int32 int32Field = 1;
+  string stringField = 2;
+  TestGrandchildMessage testGrandchildMessageField = 3;
+}
+
+message TestMessage {
+  double doubleField = 1;
+  float floatField = 2;
+  int32 int32Field = 3;
+  int64 int64Field = 4;
+  uint32 uint32Field = 5;
+  uint64 uint64Field = 6;
+  bool boolField = 7;
+  string stringField = 8;
+  TestEnum testEnumField = 9;
+  TestChildMessage testChildMessageField = 10;
+  uint64 repeatedDoubleLengthDoubleField = 11;
+  repeated double repeatedDoubleField = 12;
+  uint64 repeatedStringLengthStringField = 13;
+  repeated string repeatedStringField = 14;
+  uint64 repeatedTestChildMessageLengthTestChildMessageField = 15;
+  repeated TestChildMessage repeatedTestChildMessageField = 16;
+}
