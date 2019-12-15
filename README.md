@@ -51,7 +51,7 @@ Suppose your *.pb.h, *.pb.cc and C struct definition are prepared.
 ### **C struct definition requirements**
 <span id="anchor0"></span>
 C struct definition must be one byte aligned using **#pragma pack(1)** and **#pragma pack()**.
-C struct member type must correspond to protobuf message field type according to the following table. The other C struct member types not listed in the following table are not allowed.
+<br>C struct member type must correspond to protobuf message field type according to the following table. The other C struct member types not listed in the following table are not allowed.
 | protobuf message field type | C struct member type |
 | :-------------------------- | :------------------- |
 | double                      | double               |
@@ -65,5 +65,5 @@ C struct member type must correspond to protobuf message field type according to
 | enum                        | enum : int           |
 | message                     | struct (must meet [C struct definition requirements](#anchor0)) |
 | repeated field_type         | int32_t/int64_t/uint32_t/uint64_t (element amount of the next array member)<br>member_type * (not member_type[N]) |
-### **Attention**
+## **Attention**
 Your C++ project must have a multi-threaded configuration, otherwise protobuf will not work well.
