@@ -62,9 +62,9 @@ C struct definition must be one byte aligned using **#pragma pack(1)** and **#pr
 | uint32                      | uint32_t             |
 | uint64                      | uint64_t             |
 | bool                        | bool                 |
-| string<br>Note: UTF-8 encoding is required.        | char * (utf-8, not char[N])<br>Note: 1. UTF-8 encoding is required.<br>2. NULL value of this member will be converted to "" of the protobuf message string field. |
+| string<br>Note:<br>UTF-8 encoding is required. | char * (not char[N])<br>Note:<br>1. UTF-8 encoding is required.<br>2. NULL value of this member will be converted to "" of the protobuf message string field. |
 | enum                        | enum : int           |
-| message                     | struct (must meet [C struct definition requirements](#anchor0)) |
-| repeated field_type         | member_type * (not member_type[N])<br>Note: **1. The element amount of the array must be provided by the previous member whose type is int32_t/int64_t/uint32_t/uint64_t.**<br>If member_type is struct, it must meet [C struct definition requirements](#anchor0). |
+| message                     | struct<br>Note:<br>struct member must meet [C struct definition requirements](#anchor0). |
+| repeated element_type       | element_type * (not element_type[N])<br>Note: **1. The element amount of the array must be provided by the previous member whose type is int32_t/int64_t/uint32_t/uint64_t.**<br>2. element_type must meet [C struct definition requirements](#anchor0). |
 ## **Attention**
 Your C++ project must have a multi-threaded configuration, otherwise protobuf will not work well.
