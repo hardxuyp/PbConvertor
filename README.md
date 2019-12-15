@@ -52,6 +52,7 @@ Suppose your *.pb.h, *.pb.cc and C struct definition are prepared.
 <span id="anchor0"></span>
 C struct definition must be one byte aligned using **#pragma pack(1)** and **#pragma pack()**.
 <br>C struct member type must correspond to protobuf message field type according to the following table. The other C struct member types not listed in the following table are not allowed.
+
 | protobuf message field type | C struct member type |
 | :-------------------------- | :------------------- |
 | double                      | double               |
