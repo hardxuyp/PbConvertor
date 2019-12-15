@@ -62,7 +62,7 @@ C struct definition must be one byte aligned using **#pragma pack(1)** and **#pr
 | uint32                      | uint32_t             |
 | uint64                      | uint64_t             |
 | bool                        | bool                 |
-| string                      | char * (not char[N])<br>Note: NULL value of this member will be converted to "" of the protobuf message string field. |
+| string (utf-8)              | char * (utf-8, not char[N])<br>Note: NULL value of this member will be converted to "" of the protobuf message string field. |
 | enum                        | enum : int           |
 | message                     | struct (must meet [C struct definition requirements](#anchor0)) |
 | repeated field_type         | member_type * (not member_type[N])<br>**Note: The element amount of the array must be provided by the previous member whose type is int32_t/int64_t/uint32_t/uint64_t.** |
