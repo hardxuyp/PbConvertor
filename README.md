@@ -1,6 +1,6 @@
 # **PbConvertor-C++ convertor between protobuf message and C struct**
 PbConvertor is used to convert protobuf message to C struct or C struct to protobuf message. PbConvertor is mainly based on protobuf reflection.
-## **Dependence**
+## **Dependency**
 - C++11 or higher C++ version
 - protobuf
 ## **Usage**
